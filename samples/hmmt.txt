@@ -1,0 +1,18 @@
+size 8cm
+real theta = 65;
+B = (0,0)
+C = (4,0)
+A = B + 2*dir(theta)
+D = C + 3.35*dir(180-theta)
+P = reflect((B+C)/2, extension(A,B,C,D)) * A;
+X = circumcenter(P,A,D)
+P = extension(A, A+C-B, D,C)
+
+A--B--C--D--cycle / 1.2
+A--P / red
+circumcircle(A,D,P) / red
+A--X / red 0.8 / |(0.25cm)
+D--X / red 0.8 / |(0.25cm)
+P--X / red 0.8 / |(0.25cm)
+B--X / gray / ||(0.25cm)
+X--C / gray / ||(0.25cm)
